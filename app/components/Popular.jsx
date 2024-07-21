@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { fetchPopularRepos } from '../utils/api';
+import Table from './Table';
 
 function LanguagesNav({ selected, onUpdateLanguage }) {
     const languages = ['All', 'JavaScript', 'Ruby', 'Java', 'CSS', 'Python', 'CSharp'];
@@ -68,7 +69,7 @@ export default class Popular extends React.Component {
 
                 {error && <p className='text-center error'>{error}</p>}
 
-                {repos && JSON.stringify(repos, null, 2)}
+                {repos && <Table repos={repos}/>}
             </main>
         );
     }
