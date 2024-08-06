@@ -9,7 +9,7 @@ class App extends React.Component {
         return (
         <div className='dark'>
             <div className='container'>
-                <Battle/>
+                <Popular />
             </div>
         </div>
         )
