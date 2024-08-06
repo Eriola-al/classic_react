@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { battle } from '../utils/api';
 import PropTypes from "prop-types";
+import Loading from './Loading';
 
 function Card({ profile }) {
   const {
@@ -97,7 +98,7 @@ export default class Results extends React.Component {
         const {winner,loser, error, loading} = this.state;
 
         if(loading === true){
-            return <i>LOADING</i>
+            return <Loading text="Battling "/>
         }
 
         if(error) {
@@ -114,7 +115,7 @@ export default class Results extends React.Component {
                     <Card profile={winner.profile}/>
                     <p className='results'>
                         <span>
-                            {winner.score === loser.score ? 'Tie' : 'Winner'}
+                            {winner.score === loser.score ? 'Tie ' : 'Winner '}
                             {winner.score.toLocaleString()}
                         </span>
                         {winner.score !== loser.score && (
@@ -130,7 +131,7 @@ export default class Results extends React.Component {
                     <Card profile={loser.profile}/>
                     <p className='results'>
                         <span>
-                            {winner.score === loser.score ? 'Tie' : 'Winner'}
+                            {winner.score === loser.score ? 'Tie ' : 'Winner '}
                             {loser.score.toLocaleString()}
                         </span>
                     </p>
