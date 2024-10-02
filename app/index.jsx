@@ -8,21 +8,15 @@ import Nav from './components/Nav';
 import Results from './components/Results';
 
 class App extends React.Component {
-    constructor(prop) {
-        super(prop);
-
-        this.state = {
-            theme: "light",
-        };
-
-        this.toggleTheme = this.toggleTheme.bind(this);
+    state = {
+        theme: "light",
     }
 
-    toggleTheme() {
+    toggleTheme = () => {
         this.setState(({ theme }) => ({
             theme: theme === "light" ? "dark" : "light",
         }));
-    }
+    };
 
     render() {
         return (
